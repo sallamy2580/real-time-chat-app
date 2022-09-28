@@ -1,0 +1,61 @@
+{
+    "name": "rtippin/messenger",
+    "description": "Laravel messenger suite.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Tippin",
+            "email": "tippindev@gmail.com",
+            "homepage": "https://tippindev.com"
+        }
+    ],
+    "homepage": "https://github.com/rtippin/messenger",
+    "keywords": [
+        "Laravel",
+        "Messenger"
+    ],
+    "require": {
+        "php": "^8.0.2|^8.1",
+        "ext-json": "*",
+        "laravel/framework": "^9.0",
+        "joypixels/emoji-toolkit": "^6.0",
+        "intervention/image": "^2.5",
+        "intervention/imagecache": "^2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "RTippin\\Messenger\\": "src/",
+            "RTippin\\Messenger\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RTippin\\Messenger\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RTippin\\Messenger\\MessengerServiceProvider"
+            ],
+            "aliases": {
+                "Messenger": "RTippin\\Messenger\\Facades\\Messenger"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
